@@ -4,6 +4,10 @@ library(duckdb)
 db <- duckdb(dbdir = "C:/R/wkp_data/data/wkp_data.duckdb")
 con <- DBI::dbConnect(db)
 
+tabelnamen <- dbListTables(con)
+velden_meetwaarden <- dbListFields(con, "meetwaarden")
+velden_meetpunten <- dbListFields(con, "meetpunten")
+
 meetwaarden <- dplyr::tbl(con, "meetwaarden")
 meetpunten <- dplyr::tbl(con, "meetpunten")
 
