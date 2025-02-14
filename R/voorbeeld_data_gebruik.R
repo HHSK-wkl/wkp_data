@@ -22,3 +22,5 @@ imidacloprid %>%
   ggplot(aes(Meetjaar, aantal_meetpunten)) +
   geom_col() +
   facet_wrap(~Waterbeheerder.naam)
+
+DBI::dbDisconnect(con)
